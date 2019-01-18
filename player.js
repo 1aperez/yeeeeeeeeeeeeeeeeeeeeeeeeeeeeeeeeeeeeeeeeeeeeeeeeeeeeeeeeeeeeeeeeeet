@@ -54,8 +54,18 @@ let physical = {
       this.stats.hp= this.sats.hp-this.stats.atk/4;
       return this.stats.atk+bonus
     }
-  }
+  },
+    falconPunch: function(){
+    let baseDamage= this.stat.atk*0.5;
+    let bonus = 1*this.stats.atk*Math.random();
+    return baseDamage+bonus
+    }
+    
 }
+
+
+
+
 let magic={
   hydroPump: function(){
     if(this.stats.mp>=8){
@@ -101,7 +111,7 @@ let p1Pack = [2,2,1,0,1,1,0,0];
 let player1 = {
   name: p1Name,
   stats: p1Stats,
-  moves: p1Moves,
+  moves: p1moves,
   use: function(){
     //fill in with a ton of if and else ifs
   },
