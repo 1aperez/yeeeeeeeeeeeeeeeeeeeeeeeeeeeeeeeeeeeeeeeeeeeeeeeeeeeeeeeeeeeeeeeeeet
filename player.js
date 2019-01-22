@@ -59,7 +59,17 @@ let physical = {
     let baseDamage= this.stat.atk*0.5;
     let bonus = 1*this.stats.atk*Math.random();
     return baseDamage+bonus
+    },
+
+    furyStrike: function(){
+      let bonus = 2*this.stats.atk*Math.random();
+      let pain= Math.random();
+      if(pain<0.50){
+      this.stats.hp= this.sats.hp-this.stats.atk/4;
+      return this.stats.atk+bonus
+      
     }
+  } 
     
 }
 
@@ -68,7 +78,7 @@ let physical = {
 
 let magic={
   hydroPump: function(){
-    if(this.stats.mp>=8){
+    if(this.stats.mp >= 8){
       this.stats.mp= this.stats.mp-8;
       let tetra=Math.random();
       let pump=Math.ceil(this.stats.sp/3)
@@ -81,6 +91,19 @@ let magic={
       else if(tetra<0.10){
         return 4*pump;
       }
+    }
+  },
+  hyperBeam: function(){
+    if(this.stats.mp >= 20){
+      this.stats.mp= this.stats.mp-20
+    let bonus= 1.5*this.stats.Sp
+    return bonus
+    }
+    
+  },
+  shadowClaw:function(){
+    if (this.stats.mmp>=6){
+
     }
   }
 }
