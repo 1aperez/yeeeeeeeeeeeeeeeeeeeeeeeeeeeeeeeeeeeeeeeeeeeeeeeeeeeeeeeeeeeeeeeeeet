@@ -10,15 +10,38 @@ let p1Stats = {
   sp:20
 
 }
+let p1moves ={
+  razorPunch: function(){
+    let baseDamage= this.stat.atk*0.75
+    let bonus = 0.5*this.stats.atk*Math.random();
+    return baseDamage+bonus
+  },
+  hyperBeam: function(){
+    if(this.stats.mp >= 20){
+      this.stats.mp= this.stats.mp-20
+    let bonus= 1.5*this.stats.Sp
+    return bonus
+    }
+    
+  },
+  shadowClaw:function(){
+    if (this.stats.mp>=6){
+      if(pain<0.25){
+        this.stats.hp= this.sats.hp-this.stats.atk/4;
+        return this.stats.atk+bonus
+    }
+  }
+},
+furyStrike: function(){
+  let bonus = 2*this.stats.atk*Math.random();
+  let pain= Math.random();
+  if(pain<0.50){
+  this.stats.hp= this.sats.hp-this.stats.atk/4;
+  return this.stats.atk+bonus
+  
+}
+}, 
 
-let p2Name = "Hunter Demon";
-
-let p2Stats = {
-hp: 150,
-mp: 50,
-atk:80,
-Def:20,
-Sp: 20
 }
 
 let p1Battle = {
@@ -41,7 +64,21 @@ let p1Battle = {
     }
   }
 
+} 
+
+
+
+let p2Name = "Hunter Demon";
+
+let p2Stats = {
+hp: 150,
+mp: 50,
+atk:80,
+Def:20,
+Sp: 20
 }
+
+
 let physical = {
   razorPunch: function(){
     let baseDamage= this.stat.atk*0.75
@@ -102,10 +139,13 @@ let magic={
     
   },
   shadowClaw:function(){
-    if (this.stats.mmp>=6){
-
+    if (this.stats.mp>=6){
+      if(pain<0.25){
+        this.stats.hp= this.sats.hp-this.stats.atk/4;
+        return this.stats.atk+bonus
     }
   }
+}
 }
 
 
