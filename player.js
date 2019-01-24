@@ -78,6 +78,45 @@ Def:20,
 Sp: 20
 }
 
+let p2Moves ={
+  falconPunch: function(){
+    let baseDamage= this.stat.atk*0.5;
+    let bonus = 1*this.stats.atk*Math.random();
+    return baseDamage+bonus
+    },
+    hydroPump: function(){
+      if(this.stats.mp >= 8){
+        this.stats.mp= this.stats.mp-8;
+        let tetra=Math.random();
+        let pump=Math.ceil(this.stats.sp/3)
+         if(tetra<0.10){
+          return 2*pump;
+        }
+        else if(tetra<0.10){
+          return 3*pump;
+        }
+        else if(tetra<0.10){
+          return 4*pump;
+        }
+      }
+    },
+    shadowClaw:function(){
+      if (this.stats.mp>=6){
+        if(pain<0.25){
+          this.stats.hp= this.sats.hp-this.stats.atk/4;
+          return this.stats.atk+bonus
+      }
+    }
+  },
+  charge: function(){
+    let pain= Math.random();
+    if(pain<0.50){
+      this.stats.hp= this.sats.hp-this.stats.atk/4;
+      return this.stats.atk+bonus
+    }
+  },
+}
+
 
 let physical = {
   razorPunch: function(){
